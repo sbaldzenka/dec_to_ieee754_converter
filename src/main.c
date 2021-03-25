@@ -1,16 +1,6 @@
 /*
     Autor: sboldenko
     Date:  03.08.2017
-    Description: Программа предназначена для конвертирования чисел в IEEE754.
-                 Создайте в каталоге txt файл file_data.txt с числами, которые необходимо конвертировать в формат IEEE754.
-                 Числа в созданном файле должны быть описаны в столбец, без запятых.
-
-                 Пример: -14.7
-                         0.78
-                         140
-
-                 Преобразованные значения из файла сохранятся в файле IEEE754.txt в 32-х разрядном двоичном виде. Файл IEEE754.txt создавать не нужно.
-                 При повторном конвертировании удалите старый файл IEEE754.txt, иначе новые значения допишутся в файл со старыми значениями.
 */
 
 #include <stdio.h>
@@ -21,35 +11,35 @@
 int main(int argc, char *argv[])
 {
     float data[100];
-	int i = 0;
-	int k;
-	int ieee754_data[31];
-	int number_p;
+    int i = 0;
+    int k;
+    int ieee754_data[31];
+    int number_p;
 
-	puts("-------------------------------------------------------------------------------\n");
-	puts("                         -- floating_point_ieee754 --\n");
-	puts("-------------------------------------------------------------------------------\n");
-	puts("Create file \"file_data.txt\" with data and enter number:\n");
-	scanf("%d", &number_p);
-	puts("Number confirm.\n");
+    puts("-------------------------------------------------------------------------------\n");
+    puts("                         -- floating_point_ieee754 --\n");
+    puts("-------------------------------------------------------------------------------\n");
+    puts("Create file \"file_data.txt\" with data and enter number:\n");
+    scanf("%d", &number_p);
+    puts("Number confirm.\n");
 
-	for (i = 0; i < number_p; i++)
-	{
-		data[i] = read_data_file(i);
-		printf("read data = %f\n", data[i]);
+    for (i = 0; i < number_p; i++)
+    {
+        data[i] = read_data_file(i);
+        printf("read data = %f\n", data[i]);
 
-		for (k = 31; k > 0; k--)
-		{
-			ieee754_data[k] = convert_ieee754(data[i], k);
-			write_data_file(ieee754_data[k], 0);
-		}
+        for (k = 31; k > 0; k--)
+        {
+            ieee754_data[k] = convert_ieee754(data[i], k);
+            write_data_file(ieee754_data[k], 0);
+        }
 
-		ieee754_data[0] = convert_ieee754(data[i], 0);
-		write_data_file(ieee754_data[0], 1);
-	}
+        ieee754_data[0] = convert_ieee754(data[i], 0);
+        write_data_file(ieee754_data[0], 1);
+    }
 
-	puts("Data was converted.\n");
+    puts("Data was converted.\n");
 
-	system("PAUSE");
-	return(0);
+    system("PAUSE");
+    return(0);
 }
