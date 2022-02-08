@@ -12,45 +12,45 @@ int convert_dec2bin(int data, int n)
     int k = 0;
     int count = 0;
     int bin[32];
-    
+
     calc[0] = (float)data;
-    
+
     for (i = 0; i <= 31; i++)
     {
         calc[i+1] = calc[i] / 2;
         frac = calc[i + 1] - (int)calc[i + 1];
-    
+
         if (frac == 0.f)
             bin_inv[i] = 0;
         else
             bin_inv[i] = 1;
-    
+
         calc[i + 1] = (int)calc[i + 1];
     }
-    
+
     count = 0;
-    
+
     for(l = 31; l >= 0; l--)
     {
         if (bin_inv[l] == 1)
         {
-    	    flag = 1;
+            flag = 1;
         }
-    
+
         if (flag == 1)
         {
-    	    bin[k] = bin_inv[l];
-    	    count = count+1;
-    	    bin[32] = count;
-    	    k = k + 1;
+            bin[k] = bin_inv[l];
+            count = count+1;
+            bin[32] = count;
+            k = k + 1;
         }
     }
-    
+
     flag = 0;
     k = 0;
     i = 0;
     l = 31;
-    
+
     return(bin[n]);
 }
 
@@ -60,26 +60,24 @@ int convert_frac2bin(float data, int n)
     float calc[31];
     int k = 0;
     int bin[31];
-    
+
     calc[0] = data;
-    
+
     for (i = 0; i <= 31 ;i++)
     {
         calc[i + 1] = calc[i] * 2;
-    
+
         if (calc[i + 1] > 1)
-    	{
-    	    bin[k] = 1;
-    	    calc[i + 1] = calc[i + 1] - (int)calc[i + 1];
-    	}
+        {
+            bin[k] = 1;
+            calc[i + 1] = calc[i + 1] - (int)calc[i + 1];
+        }
         else
-    	{
-    	    bin[k] = 0;
-    	}
-    
+            bin[k] = 0;
+
         k = k + 1;
     }
-   
+
     i = 0;
     k = 0;
     
@@ -104,7 +102,7 @@ int convert_exp2bin(int data, int n)
         frac = calc[i + 1] - (int)calc[i + 1];
     
         if (frac == 0.f)
-    	    bin_inv[i] = 0;
+            bin_inv[i] = 0;
         else
             bin_inv[i] = 1;
     
@@ -140,9 +138,7 @@ int convert_ieee754(float data, int n)
     int m = 0;
     
     if (data > 0)
-    {
         word[31] = 0;
-    }
     else
     {
         word[31] = 1;
