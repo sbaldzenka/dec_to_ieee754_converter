@@ -1,7 +1,8 @@
-/*
-    Autor: sboldenko
-    Date:  03.08.2017
-*/
+// Project     : dec_to_ieee754_converter
+// Autor       : Siarhei Baldzenka (sbaldzenka)
+// Date        : 03.08.2017
+// Description : Main project file
+
 
 #include <stdio.h>
 #include "../src/read_file.h"

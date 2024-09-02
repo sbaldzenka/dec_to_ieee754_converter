@@ -1,3 +1,8 @@
+// Project     : dec_to_ieee754_converter
+// Autor       : Siarhei Baldzenka (sbaldzenka)
+// Date        : 03.08.2017
+// Description : Read file function
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../src/read_file.h"

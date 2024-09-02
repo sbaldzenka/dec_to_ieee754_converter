@@ -1,3 +1,8 @@
+// Project     : dec_to_ieee754_converter
+// Autor       : Siarhei Baldzenka (sbaldzenka)
+// Date        : 03.08.2017
+// Description : Converter functions
+
 #include <stdio.h>
 #include "../src/ieee754x32.h"
 

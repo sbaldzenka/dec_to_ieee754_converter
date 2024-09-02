@@ -10,12 +10,6 @@ SOURCES=src/main.c       \
 		src/read_file.c  \
 		src/write_file.c
 
-HEADERS=src/ieee754x32.h \
-		src/read_file.h  \
-		src/write_file.h
-
-OUTDIR=build
-
 all:
 	$(CC) $(SOURCES) -o $(APP_NAME)
 
