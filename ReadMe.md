@@ -1,11 +1,11 @@
 # dec_to_ieee754_converter
 
-Программа предназначена для конвертирования десятичных чисел в IEEE754. Использовалась для создания файла инициации BRAM-памяти FPGA.
+The program is designed to convert decimal numbers to IEEE754. Used to create FPGA BRAM initiation files.
 
-Создайте в каталоге txt файл file_data.txt с числами, которые необходимо конвертировать в формат IEEE754.
-Числа в созданном файле должны быть описаны в столбец, без запятых.
+Create a file file_data.txt in the txt directory with the numbers that need to be converted to IEEE754 format.
+The numbers in the created file should be described in a column, without commas.
 
-Пример:
+Example:
 
 			-14.7 
 			
@@ -13,6 +13,5 @@
 			
 			140 
 
-Преобразованные значения из файла сохранятся в файле IEEE754_result.txt в 32-х разрядном двоичном виде. Файл IEEE754_result.txt создавать не нужно.
-При повторном конвертировании удалите старый файл IEEE754_result.txt, иначе новые значения допишутся в файл со старыми значениями.
-
+The converted values from the file will be saved in the IEEE754_result.txt file in 32-bit binary form. There is no need to create the IEEE754_result.txt file.
+When converting again, delete the old IEEE754_result.txt file, otherwise new values will be added to the file with the old values.
