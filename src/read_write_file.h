@@ -34,9 +34,10 @@ description : https://github.com/sbaldzenka/dec_to_ieee754_converter
 ---------------------------------------------------------------------------------------
 */
 
-#ifndef _IEEE754X32_H
-#define _IEEE754X32_H
+#ifndef _READ_WRITE_FILE_H
+#define _READ_WRITE_FILE_H
 
-int convert_ieee754(float data, int n);
+float read_data_file(int count);
+void write_data_file(int data, int end);
 
 #endif

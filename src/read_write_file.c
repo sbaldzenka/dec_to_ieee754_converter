@@ -34,9 +34,40 @@ description : https://github.com/sbaldzenka/dec_to_ieee754_converter
 ---------------------------------------------------------------------------------------
 */
 
-#ifndef _IEEE754X32_H
-#define _IEEE754X32_H
+#include <stdio.h>
+#include <stdlib.h>
+#include "../src/read_write_file.h"
 
-int convert_ieee754(float data, int n);
+float read_data_file(int count)
+{
+    char buffer[10];
+    double data_in;
+    int i = -1;
+    float buffer_massiv[100];
 
-#endif
+    FILE *file = fopen("../txt/file_data.txt", "r+");
+
+    while (fgets (buffer, 10, file) != NULL)
+    {
+        data_in= atof(buffer);
+        i = i + 1;
+        buffer_massiv[i]= (float)data_in;
+    }
+
+    fclose(file);
+    i = -1;
+
+    return(buffer_massiv[count]);
+}
+
+void write_data_file(int data, int end)
+{
+    FILE *data_out = fopen("../txt/ieee754_result.txt", "a");
+
+    if (end == 0)
+        fprintf(data_out,"%d", data);
+    else
+        fprintf(data_out,"%d\n", data);
+
+    fclose(data_out);
+}
