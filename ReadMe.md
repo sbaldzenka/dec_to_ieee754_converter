@@ -10,11 +10,10 @@ The program is designed to convert decimal numbers to IEEE754 format numbers. Us
 2. Create a file **file_data.txt** (or change the contents of an existing file) with the numbers that need
 to be converted to IEEE754 format in the **txt** directory. **The numbers in the created file should be described in a column, without commas**;
 
-#### Example:
-
-			-14.7
-			0.78
-			140
+> #### Example:
+> -14.7
+> 0.78
+> 140
 
 3. Open **build** folder and run **dec_to_ieee754_converter**;
 
