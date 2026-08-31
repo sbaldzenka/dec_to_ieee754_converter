@@ -25,3 +25,4 @@ There is no need to create the **ieee754_result.txt** file. When converting agai
 otherwise new values will be added to the file with the old values.
 
 ![folders_and_files](doc/folders_and_files.png)
+![ieee754_result](doc/ieee754_result.png)
